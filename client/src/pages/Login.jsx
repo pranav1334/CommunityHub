@@ -95,12 +95,17 @@ function Login() {
         <button type="submit">Login</button>
 
         <div className="google-login-box inside-form">
-          <p>Or continue with Google</p>
+          <div className="custom-google-row">
+            <span>Continue with Google</span>
 
-          <GoogleLogin
-            onSuccess={handleGoogleSuccess}
-            onError={() => setMessage("Google popup failed. Try again.")}
-          />
+            <GoogleLogin
+              type="icon"
+              shape="circle"
+              size="large"
+              onSuccess={handleGoogleSuccess}
+              onError={() => setMessage("Google popup failed. Try again.")}
+            />
+          </div>
         </div>
       </form>
     </div>

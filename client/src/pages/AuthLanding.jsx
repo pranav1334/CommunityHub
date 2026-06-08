@@ -23,7 +23,8 @@ function AuthLanding() {
         navigate("/register", {
           state: {
             googleCredential: credentialResponse.credential,
-            message: "Google account selected. Complete your profile to create account.",
+            message:
+              "Google account selected. Complete your profile to create account.",
           },
         });
       } else {
@@ -40,8 +41,8 @@ function AuthLanding() {
         <h1>Discover Communities That Match Your Goals</h1>
 
         <p>
-          Discover communities, view details, join groups, and manage community
-          members from one secure platform.
+          Join trusted communities, connect with members, attend meetups, and
+          manage everything in one secure platform.
         </p>
 
         <div className="auth-actions">
@@ -55,12 +56,17 @@ function AuthLanding() {
         </div>
 
         <div className="google-login-box">
-          <p>Continue with Google</p>
+          <div className="custom-google-row">
+            <span>Continue with Google</span>
 
-          <GoogleLogin
-            onSuccess={handleGoogleSuccess}
-            onError={() => alert("Google popup failed. Try again.")}
-          />
+            <GoogleLogin
+              type="icon"
+              shape="circle"
+              size="large"
+              onSuccess={handleGoogleSuccess}
+              onError={() => alert("Google popup failed. Try again.")}
+            />
+          </div>
         </div>
       </div>
 
